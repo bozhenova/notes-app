@@ -1,11 +1,17 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 
-const Page = () => {
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+export default () => {
   const router = useRouter();
   const { id } = router.query;
 
-  return <div>Note {id}</div>;
+  return (
+    <div sx={{ variant: 'containers.page' }}>
+      <h1>Note: {id} </h1>
+    </div>
+  );
 };
-
-export default Page;
